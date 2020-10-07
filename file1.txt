@@ -1,0 +1,4 @@
+Won Jun Kim,2016038001,Computer Engineering,d@gmail.com,01049302995
+Kwon Jun Seok,2017037001,EECS,c@gmail.com,01034851267
+Kim Seung Ho,2017034001,Business,f@gmail.com,01085631226
+Ko Jae Uk,2017034002,Business,d@gmail.com,01075421264
