@@ -26,7 +26,7 @@ void Menu::get_sel(int valid_start, int valid_end)
 		cin >> sel;
 		cin.ignore(1024, '\n');
 
-		if (valid_start <= sel && valid_end <= sel) {
+		if (valid_start <= sel &&  sel <= valid_end) {
 			valid_sel = 1;
 			m_sel = sel;
 		}

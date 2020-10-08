@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="db_reader.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -36,11 +33,11 @@
     <ClCompile Include="student_db.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="db_IO.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="db_reader.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="menu.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
@@ -54,6 +51,9 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="student_db.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="db_IO.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

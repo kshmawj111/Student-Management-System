@@ -1,4 +1,5 @@
 #include "student_db.h"
+#include <iomanip>
 
 void StudentDB::add_student(const Student *student)
 {
@@ -11,12 +12,18 @@ void StudentDB::print_searched()
 	int length = m_search_db.size();
 	Student temp;
 	if (length >= 1) {
+
+		cout << setw(15) << "Name" << setw(15) << "Student ID" << setw(25)
+			<< "Department" << setw(17) << "E-mail" << setw(17) << "Telephone" << endl;
+
 		for (int i = 0; i < length; i++) {
 			temp = m_search_db[i];
 
-			cout << temp.return_name() << " " << temp.return_id() << " "
-				<< temp.return_depart() << " " << endl;
+			cout << setw(15) << temp.return_name() << setw(15) << temp.return_id() << setw(25)
+				<< temp.return_depart() << setw(17) << temp.return_email() << setw(17) << temp.return_tel() << endl;
 		}
+
+		vector <Student>().swap(m_search_db);	// Search Vector를 Null vector와 교환하여 비움.
 	}
 	else {
 		cout << "Nothing searched.\n";

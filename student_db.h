@@ -31,5 +31,6 @@ public:
 	void sort_db(int ref);	// ref: 1, 2, 3, 4, 5 -> name, id, depart, email, tel. 
 	void search_db(string keyword, int ref);	// keyword: target, ref: 1, 2, 3, 4, 5 -> name, id, admission_year, department name, all
 	vector <Student> return_db() { return m_student_db; }
+	void load_db(vector <Student> student_db) { m_student_db = student_db; }
 
 };

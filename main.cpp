@@ -2,7 +2,7 @@
 #include "search_menu.h"
 #include "Student.h"
 #include "sort_menu.h"
-#include "db_reader.h"
+#include "db_IO.h"
 
 using namespace std;
 
@@ -14,10 +14,10 @@ int main()
 	map <string, string> mapping_table;
 	
 	filemanager.read_mapping("file2.txt"); // mapping table must be made before reading database from file1.txt
-	filemanager.read_db("file1.txt");
+	filemanager.read_file("file1.txt");
 	
 
-	student_db.return_db() = filemanager.return_db();
+	student_db.load_db(filemanager.return_db());
 	mapping_table = filemanager.reuturn_mapping();
 
 	while (true) {
@@ -34,7 +34,6 @@ int main()
 				cin >> sel;
 				cin.clear();
 				cin.ignore(1024, '\n');
-				cout << "\n";
 
 				if (1 <= sel && sel <= 4) { valid_sel = 1; }
 				else {
@@ -63,6 +62,7 @@ int main()
 				string keyword = search_menu.return_keyword();
 				
 				student_db.search_db(keyword, search_sel);
+				cout << '\n';
 				student_db.print_searched();
 				break;
 			}
@@ -74,12 +74,14 @@ int main()
 				sort_menu.run(1, 3);	// valid choices for sort is 1 to 3
 				sort_sel = sort_menu.return_sel();
 				student_db.sort_db(sort_sel);
+				cout << "Sort complelete. Back to main menu.\n";
 				break;
 			}
 
 			case 4:	// exit
 			{
-				filemanager.write_obj("file1.txt", student_db.return_db());
+				cout << '\n';
+				filemanager.db_to_file("file1.txt", student_db.return_db());
 				cout << "Exiting the program.";
 				exit(1);
 				break;

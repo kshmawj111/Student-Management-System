@@ -19,7 +19,7 @@ void Search::print_menu()
 		"2. Search by student ID (10 numbers)\n"
 		"3. Search by admission year(4 numbers)\n"
 		"4. Search by department name\n"
-		"5. List all\n";
+		"5. List all\n"
 		"> ";
 }
 
@@ -44,39 +44,52 @@ void Search::get_keyword()
 {
 	string keyword;
 	int valid_sel;
+	if (m_sel != 5) {
+		do {
+			valid_sel = 0;
 
-	do {
-		valid_sel = 0;
-		print_keyword();
-		getline(cin, keyword);
-		cin.clear();
+			print_keyword();
+			getline(cin, keyword);
+			cin.clear();
 
-		if (keyword.size() != 0) {
-			if (m_sel == 2) {	// id must be 10 length
-				if (keyword.size() == 10) {
-					m_keyword = keyword;
-					valid_sel = 1;	// if keyword input is succesful
+			if (keyword.size() != 0) {
+				if (m_sel == 1) {	// id must be 10 length
+					if (keyword.size() <= 15) {
+						m_keyword = keyword;
+						valid_sel = 1;	// if keyword input is succesful
+					}
+					else {
+						cout << "Name must be shorter than 15 characters including space.\n";
+
+					}
 				}
-				else {
-					cout << "Student id must be 10 digits long.\n";
 
+				else if (m_sel == 2) {	// id must be 10 length
+					if (keyword.size() == 10) {
+						m_keyword = keyword;
+						valid_sel = 1;	// if keyword input is succesful
+					}
+					else {
+						cout << "Student id must be 10 digits long.\n";
+
+					}
+				}
+
+				else if (m_sel == 3) {	// admission year must be 4 length
+					if (keyword.size() == 4) {
+						m_keyword = keyword;
+						valid_sel = 1;
+					}
+					else {
+						cout << "Admission year must be length of four.\n";
+					}
 				}
 			}
-
-			else if (m_sel == 3) {	// admission year must be 4 length
-				if (keyword.size() == 4) {
-					m_keyword = keyword;
-					valid_sel = 1;
-				}
-				else {
-					cout << "Admission year must be length of four.\n";
-				}
+			else {
+				cout << "Keyword must not be empty\n";
 			}
-		}
-		else {
-			cout << "Keyword must not be empty\n";
-		}
-		cout << "\n";
+			cout << "\n";
 
-	} while (!valid_sel);
+		} while (!valid_sel);
+	}
 }

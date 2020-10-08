@@ -1,4 +1,4 @@
-#include "db_reader.h"
+#include "db_IO.h"
 
 using namespace std;
 
@@ -31,15 +31,15 @@ void FileModule::parse_to_db(string text, char delimiter, int db_pos)
 		case 4: // token == email
 			temp.set_email(token);
 			text.erase(0, pos + 1);
-			break;
-
-		case 5: // token == tel
-			temp.set_tel(token);
-			text.erase(0, pos + 1);
-			break;
+			break;		
 		
 		}
 	}
+
+	// 마지막 남은 텍스느는 여기로
+	token = text.substr(0, pos);
+	temp.set_tel(token);
+	text.erase(0, pos + 1);
 
 	m_student_db.push_back(temp);
 }
@@ -57,7 +57,7 @@ void FileModule::parse_to_map(string line, char delimiter)
 
 }
 
-void FileModule::read_db(string filename)
+void FileModule::read_file(string filename)
 {
 	int idx;
 	size_t filesize;
@@ -131,9 +131,9 @@ void FileModule::read_mapping(string filename)
 }
 
 
-void FileModule::write_obj(string filename, vector <Student> student_db)
+void FileModule::db_to_file(string filename, vector <Student> student_db)
 {
-	ofstream file(filename, ios::app);	// file is created at this point
+	ofstream file(filename);	// file is created at this point
 	int length = student_db.size(), i;
 
 	if (length > 0) {
