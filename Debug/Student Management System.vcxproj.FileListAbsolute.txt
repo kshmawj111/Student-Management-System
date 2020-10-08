@@ -1,0 +1,2 @@
+C:\Users\kshma\source\repos\Student-Management-System\Debug\SMS.exe
+C:\Users\kshma\source\repos\Student-Management-System\Debug\SMS.pdb

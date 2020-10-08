@@ -7,7 +7,8 @@ using namespace std;
 class Search : public Menu
 {
 private:
-	string m_keyword;
+	string m_keyword = "";
+	int valid_keyword;
 	void print_menu();
 	void print_keyword();
 	void get_keyword();

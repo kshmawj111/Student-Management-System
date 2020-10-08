@@ -8,13 +8,14 @@
 #include <string>
 #include <iostream>
 #include <map>
+#include <vector>
 
 using namespace std;
 
 class Student
 {
 public:
-	void set_data(map <string, string> mapping_table);
+	void set_data(vector <Student> student_db, map <string, string> mapping_table);
 	void set_data(string name, string id, string depart, string email, string tel);
 	void set_name(string name) {m_name = name;}
 	void set_id(string id) { m_student_id = id; }
@@ -22,6 +23,8 @@ public:
 	void set_tel(string tel) { m_tel = tel; }
 	void set_department(map <string, string> mapping_table);
 	void set_department(string student_id);
+
+	bool check_id_unique() { return id_unique; }	// if id is unique, return true
 
 	string return_name(void) { return m_name; }
 	string return_id(void) { return m_student_id; }
@@ -36,8 +39,10 @@ private:
 	string m_email;
 	string m_tel;
 
+	bool id_unique;
+
 	void set_name(void);
-	void set_id(void);
+	void set_id(vector <Student> student_db);
 	void set_email(void);
 	void set_tel(void);
 

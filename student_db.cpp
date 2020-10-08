@@ -22,7 +22,7 @@ void StudentDB::print_searched()
 			cout << setw(15) << temp.return_name() << setw(15) << temp.return_id() << setw(25)
 				<< temp.return_depart() << setw(17) << temp.return_email() << setw(17) << temp.return_tel() << endl;
 		}
-
+		cout << '\n';
 		vector <Student>().swap(m_search_db);	// Search Vector를 Null vector와 교환하여 비움.
 	}
 	else {

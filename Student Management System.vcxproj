@@ -41,6 +41,7 @@
     <ProjectGuid>{1ee5fa1a-dac8-4f72-89b7-39a65f0ac06c}</ProjectGuid>
     <RootNamespace>StudentManagementSystem</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>SMS</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

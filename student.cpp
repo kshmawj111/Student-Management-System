@@ -22,26 +22,45 @@ void Student::set_name() {
 }
 
 
-void Student::set_id(void) {
+void Student::set_id(vector <Student> student_db) {
 	string id;
-	int valid_id;
+
+	bool is_unique = true, valid_id;
+	vector <Student>::iterator iter;
 
 	do {
-		valid_id = 0;
+		valid_id = false;
 		cout << "student id: ";
 		getline(cin, id);
 		cin.clear();
 
 		if (id.size() == 10) {
 			// id must be 10 length
-			m_student_id = id;
-			valid_id = 1;
+			for (iter = student_db.begin(); iter != student_db.end(); iter++) {
+				if (iter->m_student_id == id) {
+					is_unique = false;
+					cout << "This student number already exists in the database.\n";
+					break;
+				}
+
+				if (is_unique == true) {
+					// if the id is not in the student databse
+					m_student_id = id;
+					valid_id = true;
+				}
+			}
+			
 		}
 		else if (id.size() == 0) {
 			cout << "Student id should not be blank.\n" << endl;
 		}
 		else {
 			cout << "Student id must be exactly 10 length.\n" << endl;
+		}
+
+		if (is_unique == false) {
+			id_unique = is_unique;
+			break;
 		}
 	} while (!valid_id);
 }
@@ -108,13 +127,15 @@ void Student::set_tel(void) {
 }
 
 
-void Student::set_data(map <string, string> mapping_table) {
+void Student::set_data(vector <Student> student_db, map <string, string> mapping_table) {
 
 	set_name();
-	set_id();
-	set_department(mapping_table);
-	set_email();
-	set_tel();
+	set_id(student_db);
+	if (id_unique == true) {
+		set_department(mapping_table);
+		set_email();
+		set_tel();
+	}
 }
 
 
