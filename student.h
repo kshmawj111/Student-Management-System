@@ -39,12 +39,13 @@ private:
 	string m_email;
 	string m_tel;
 
-	bool id_unique;
+	bool id_unique = true;
 
 	void set_name(void);
 	void set_id(vector <Student> student_db);
 	void set_email(void);
 	void set_tel(void);
+	bool is_unique_id(string id, vector <Student> student_db);
 
 };
 

@@ -12,7 +12,7 @@ void Menu::run(int valid_start, int valid_end)
 
 // menu print method
 void Menu::print_menu(){
-	cout << "Menu needs to be typed by overriding print_menu() method.\n";
+	cout << "\n@Warning: Menu prints need to be typed by overriding print_menu() method.\n";
 }
 
 
@@ -32,7 +32,7 @@ void Menu::get_sel(int valid_start, int valid_end)
 		}
 
 		else {
-			cout << "Wrong number entered. Please choose the right number.\n";
+			cout << "\n@Error: Wrong number entered. Please choose the right number.\n";
 			cout << ">> ";
 		}
 	} while (!valid_sel);

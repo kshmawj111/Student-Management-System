@@ -1,2 +1,5 @@
 C:\Users\kshma\source\repos\Student-Management-System\Debug\SMS.exe
 C:\Users\kshma\source\repos\Student-Management-System\Debug\SMS.pdb
+C:\Users\kshma\source\repos\객체지향프로그램\Debug\SMS.pdb
+C:\Users\kshma\source\repos\객체지향프로그램\Student Management System\Debug\SMS.exe
+C:\Users\kshma\source\repos\객체지향프로그램\Student Management System\Debug\SMS.pdb

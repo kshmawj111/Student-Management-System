@@ -1,9 +1,9 @@
 Jay Park,2016037215,EECS,jay@gmail.com,01042329654
+Won Jun Kim,2016038001,Computer Engineering,d@gmail.com,01049302995
+Kim Jeong Hun,2016570501,Unknown,abc@gmail.com,01039304839
 Kim Seung Ho,2017034001,Business,f@gmail.com,01085631226
 Ko Jae Uk,2017034002,Business,d@gmail.com,01075421264
-Kwon Jun Seok,2017037001,EECS,c@gmail.com,01034851267
-Won Jun Kim,2016038001,Computer Engineering,d@gmail.com,01049302995
 Won Jun Kim,2017034004,Business,che@gmail.com,01029304859
+Kwon Jun Seok,2017037001,EECS,c@gmail.com,01034851267
 123456789012345,2017037002,EECS,defh@gmail.com,01039403748
-Won Jun Kim,2016570501,Unknown,ksh@mgmail.com,0103849549
-Kim Jeong Hun,2016570501,Unknown,abc@gmail.com,01039304839
+max email,2018034651,Business,123456789012345,01023156548

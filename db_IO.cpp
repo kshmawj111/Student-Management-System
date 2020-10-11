@@ -122,7 +122,7 @@ void FileModule::read_mapping(string filename)
 		}
 	}
 	else {
-		cout << "Error occured while reading mapping table " << filename << endl;
+		cout << "\n@Error: Unknown error occured while reading mapping table " << filename << endl;
 		exit(1);
 	}
 

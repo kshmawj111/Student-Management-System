@@ -61,7 +61,7 @@ void Search::get_keyword()
 					valid_keyword = 1;	// if keyword input is succesful
 				}
 				else {
-					cout << "Error: Name must be shorter than 15 characters including space.";
+					cout << "\n@Error: Name must be shorter than 15 characters including space.";
 
 				}
 			}
@@ -72,7 +72,7 @@ void Search::get_keyword()
 					valid_keyword = 1;	// if keyword input is succesful
 				}
 				else {
-					cout << "Error: Student id must be 10 digits long.";
+					cout << "\n@Error: Student id must be 10 digits long.";
 
 				}
 			}
@@ -83,12 +83,17 @@ void Search::get_keyword()
 					valid_keyword = 1;
 				}
 				else {
-					cout << "Error: Admission year must be length of four.";
+					cout << "\n@Error: Admission year must be length of four.";
 				}
+			}
+
+			else if (m_sel == 4) {	// admission year must be 4 length
+				m_keyword = keyword;
+				valid_keyword = 1;
 			}
 		}
 		else {
-			cout << "Keyword must not be empty";
+			cout << "\n@Error: Keyword must not be empty";
 		}
 		cout << "\n";
 	}
